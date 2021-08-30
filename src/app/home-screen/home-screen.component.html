@@ -1,0 +1,22 @@
+<header>
+  <div>
+    <img src="" alt="logo" />
+    <img src="" alt="user" />
+  </div>
+  <p>Valor total:</p>
+  <h2>R$ {{ payingValue }}</h2>
+</header>
+<main>
+  <h2>Streamings ativos</h2>
+  <section>
+    <div *ngFor="let i of streaming">
+      <img src="{{ i.logo }}" alt="" />
+      <div>
+        <p>{{ i.name }}</p>
+        <p>individual</p>
+      </div>
+      <p>R$ {{ i.price }}</p>
+    </div>
+</section>
+  <div class="" id="addStreaming">+</div>
+</main>
