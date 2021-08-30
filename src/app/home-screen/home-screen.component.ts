@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeScreenComponent implements OnInit {
   payingValue = 0
   streaming = [{
-    logo: "",
+    logo: "https://i.imgur.com/wCyMYAE.png",
     name:"Disney+",
     price:22.50
   },
   {
-    logo: "",
+    logo: "https://i.imgur.com/wCyMYAE.png",
     name:"Paramount+",
     price:10.50
   }]

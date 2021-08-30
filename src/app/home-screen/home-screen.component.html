@@ -9,14 +9,17 @@
 <main>
   <h2>Streamings ativos</h2>
   <section>
-    <div *ngFor="let i of streaming">
-      <img src="{{ i.logo }}" alt="" />
-      <div>
-        <p>{{ i.name }}</p>
-        <p>individual</p>
+    <form *ngFor="let i of streaming">
+      <div class="items">
+        <img src="{{ i.logo }}" alt=""/>
+        <div>
+          <p>{{ i.name }}</p>
+          <p>individual</p>
+        </div>
+        <p class="price">R$ {{ i.price }}</p>
       </div>
-      <p>R$ {{ i.price }}</p>
-    </div>
+      <div class="separador"></div>
+    </form>
 </section>
   <div class="" id="addStreaming">+</div>
 </main>
