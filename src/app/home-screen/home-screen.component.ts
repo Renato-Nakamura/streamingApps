@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScreenComponent implements OnInit {
   payingValue = 0
+
   streaming = [{
     logo: "https://i.imgur.com/wCyMYAE.png",
     name:"Disney+",
@@ -17,11 +18,13 @@ export class HomeScreenComponent implements OnInit {
     name:"Paramount+",
     price:10.50
   }]
-
+  //total = this.streaming.length != parseInt(this.streaming.findIndex)
+ 
   constructor() { }
 
   ngOnInit(){
     this.priceTotal()
+    console.log( this.streaming.length)
   }
 
   priceTotal(){

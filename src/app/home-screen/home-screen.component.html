@@ -18,8 +18,8 @@
         </div>
         <p class="price">R$ {{ i.price }}</p>
       </div>
-      <div class="separador"></div>
+      <div class="separador" *ngIf="(i.price != streaming[(streaming.length-1)].price)"></div>
     </form>
 </section>
-  <div class="" id="addStreaming">+</div>
 </main>
+<div class="add" id="addStreaming"><button>+</button></div>

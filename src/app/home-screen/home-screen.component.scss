@@ -60,7 +60,31 @@ main{
                     flex: 3;
                     font-size: 1.7em;
                 }
+
             }
         }
+    }
+}
+
+.add{
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: gray;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        font-size: 2em;
+        color: white;
     }
 }
