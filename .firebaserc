@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "streamingapp-b3b02": {
+      "hosting": {
+        "streamingApps": [
+          "streamingapp-b3b02"
+        ]
+      }
+    }
+  }
+}
