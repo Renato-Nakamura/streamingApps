@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-home-screen',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScreenComponent implements OnInit {
   payingValue = 0
-
+  user = environment.user
   streaming = [{
     logo: "https://i.imgur.com/wCyMYAE.png",
     name:"Disney+",
@@ -20,14 +22,17 @@ export class HomeScreenComponent implements OnInit {
   }]
   //total = this.streaming.length != parseInt(this.streaming.findIndex)
  
-  constructor() { }
+  constructor(
+    private authService:AuthService
+  ) { }
 
   ngOnInit(){
-    this.priceTotal()
-    console.log( this.streaming.length)
+    this.authService.loggedIn()
+    this.totalPrice()
+    console.log( this.user)
   }
 
-  priceTotal(){
+  totalPrice(){
     for(let i of this.streaming){
       this.payingValue = this.payingValue + i.price
     }
