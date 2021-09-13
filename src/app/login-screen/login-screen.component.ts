@@ -32,7 +32,7 @@ export class LoginScreenComponent implements OnInit {
   ngOnInit()  {
     console.log(environment.user.id)
     this.authService.loggedIn()
-    this.router.navigate(["/home"])
+    //this.router.navigate(["/home"])
   }
   
 

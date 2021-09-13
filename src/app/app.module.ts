@@ -13,12 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AddStreamingComponent } from './add-streaming/add-streaming.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
+    AddStreamingComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@
   <section>
     <form *ngFor="let i of streaming">
       <div class="items">
-        <img src="{{ i.logo }}" alt=""/>
+        <img src="{{ i.logo }}" alt="logo"/>
         <div>
           <p>{{ i.name }}</p>
           <p>individual</p>
@@ -22,4 +22,4 @@
     </form>
 </section>
 </main>
-<div class="add" id="addStreaming"><button>+</button></div>
+<div class="add" id="addStreaming"><button routerLink="/addStreaming">+</button></div>

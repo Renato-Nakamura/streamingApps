@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,6 +10,7 @@ export class AuthService {
 
   constructor(
     public auth: AngularFireAuth,
+    private router: Router
   ) { }
 
   loggedIn(){
@@ -23,7 +25,7 @@ export class AuthService {
         environment.user.photo = photoURL
       }
       else{
-        alert('login again')
+        this.router.navigate(['/login'])
       }
     })
   }
