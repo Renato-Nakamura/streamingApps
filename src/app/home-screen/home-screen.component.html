@@ -16,7 +16,7 @@
           <p>{{ i.name }}</p>
           <p>individual</p>
         </div>
-        <p class="price">R$ {{ i.price }}</p>
+        <p class="price"> {{ i.price | currency:"BRL"}}</p>
       </div>
       <div class="separador" *ngIf="(i.price != streaming[(streaming.length-1)].price)"></div>
     </form>
