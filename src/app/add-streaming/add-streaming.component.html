@@ -11,7 +11,23 @@
             <option value="">None</option>
             <option value="">Disney+</option>
         </select>
+        
         <label for="price">Preço</label>
         <input type="number" name="price" id="">
     </form>
+    <form class="example-form">
+
+          <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+
+      </form>
 </main>
