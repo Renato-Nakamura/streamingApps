@@ -39,5 +39,14 @@ export class LoginScreenComponent implements OnInit {
   async login() {
     let result =  await this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     this.router.navigate(["/home"])
+    if(result.user?.displayName && result.user.getIdToken && result.user.email && result.user?.photoURL){
+      this.authService.userLogged = {
+        id : result.user.uid,
+        email:result.user.email,
+        name:result.user?.displayName,
+        photo:result.user?.photoURL
+      }
+      localStorage.setItem('user',JSON.stringify(this.authService.userLogged))
+    }
   }
 }

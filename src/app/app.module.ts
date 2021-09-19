@@ -15,6 +15,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AddStreamingComponent } from './add-streaming/add-streaming.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

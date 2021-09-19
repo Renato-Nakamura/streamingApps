@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyA6hdCbYl06yhaoBYoro4ov607UeY2Q_gI",
+    apiKey:  "AIzaSyA6hdCbYl06yhaoBYoro4ov607UeY2Q_gI",
     authDomain: "streamingapp-b3b02.firebaseapp.com",
     projectId: "streamingapp-b3b02",
     storageBucket: "streamingapp-b3b02.appspot.com",

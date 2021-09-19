@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~12.0.5",
     "@angular/router": "~12.0.5",
     "@angular/service-worker": "~12.0.5",
+    "@material/textfield": "^12.0.0",
     "firebase": "^9.0.1",
     "rxfire": "^6.0.0",
     "rxjs": "~6.6.0",

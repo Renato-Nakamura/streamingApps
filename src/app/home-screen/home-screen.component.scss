@@ -56,6 +56,9 @@ main{
                     flex-direction: column;
                     align-items: baseline;
                     padding: 1em;
+                    p{
+                        margin: 0;
+                    }
                 }
                 .price{
                     flex: 3;
