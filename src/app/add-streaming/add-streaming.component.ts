@@ -32,7 +32,7 @@ export class AddStreamingComponent implements OnInit {
     name:"Disney+",
     price:22.50,
     sharedWith: 0
-  },
+  }, 
   {
     logo: "https://imgur.com/5IckLFE.png",
     name:"Paramount+",
