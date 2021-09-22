@@ -9,12 +9,12 @@
 <main>
   <h2>Streamings ativos</h2>
   <section>
-    <form *ngFor="let i of items2 ">
+    <form *ngFor="let i of items ">
       <div class="items">
         <img src="{{ i.logo }}" alt="logo"/>
         <div>
           <p>{{ i.name }}</p>
-          <p>individual</p>
+          <p>{{i.sharedWith}} pessoas</p>
         </div>
         <p class="price"> {{ i.price | currency:"BRL"}}</p>
       </div>

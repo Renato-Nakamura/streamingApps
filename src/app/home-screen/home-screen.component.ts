@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { AuthService } from '../service/auth.service';
-import { DatabaseService } from '../service/database.service';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
@@ -28,13 +24,9 @@ export class HomeScreenComponent implements OnInit {
     email: '',
     photo: '',
   };
-  items: Observable<any[]>;
-  items2: any[];
+  items: any[];
   private itemsCollection: AngularFirestoreCollection<Item>;
   constructor(
-    private authService: AuthService,
-    private dbs: DatabaseService,
-    private db: AngularFireDatabase,
     private afs: AngularFirestore,
     private router: Router
   ) {
@@ -49,11 +41,10 @@ export class HomeScreenComponent implements OnInit {
     let userJSON = localStorage.getItem('user')
     if(userJSON){
       this.user = JSON.parse(userJSON)
-      
       this.itemsCollection = this.afs.collection<Item>(this.user.id);
       this.itemsCollection.valueChanges().subscribe(i =>{
-        this.items2 = i
-        this.payingValue =i.map(a=>a.price).reduce((previousValue,currentValue)=>previousValue+currentValue)
+        this.items = i
+        this.payingValue =i.map(a=>(a.price/a.sharedWith)).reduce((previousValue,currentValue)=>previousValue+currentValue)
       });
     }else{
       this.router.navigate(['/login'])
@@ -63,13 +54,13 @@ export class HomeScreenComponent implements OnInit {
   }
 
   totalPrice() {
-    for (let i of this.items2) {
+    for (let i of this.items) {
       this.payingValue = this.payingValue + i.price;
     }
   }
   app() {
     
-    for (let i of this.items2) {
+    for (let i of this.items) {
       this.payingValue = this.payingValue + i.price;
       console.log(i.price);
     }
