@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { async } from '@firebase/util';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -25,7 +26,8 @@ export class AddStreamingComponent implements OnInit {
   constructor(
     private db:DatabaseService,
     private auth:AuthService,
-    private afs:AngularFirestore
+    private afs:AngularFirestore,
+    private router:Router
     ) { 
 
     }
@@ -36,18 +38,6 @@ export class AddStreamingComponent implements OnInit {
     price: 0,
     sharedWith: 1
   }
-  /*streaming = [{
-    logo: "https://i.imgur.com/wCyMYAE.png",
-    name:"Disney+",
-    price:22.50,
-    sharedWith: 0
-  }, 
-  {
-    logo: "https://imgur.com/5IckLFE.png",
-    name:"Paramount+",
-    price:10.50,
-    sharedWith: 0
-  }]*/
 
   items: any[];
   private streamingOptions:AngularFirestoreCollection<StreamingModel>
@@ -84,6 +74,7 @@ export class AddStreamingComponent implements OnInit {
   addStreaming(){
     console.log("show")
     this.db.addStreaming(this.chosenStreaming,environment.user.id)
+    this.router.navigate(['/home'])
   }
 
 }

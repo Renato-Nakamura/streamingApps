@@ -4,7 +4,7 @@
     <img src="{{user.photo}}" alt="user" />
   </div>
   <p>Valor total:</p>
-  <h2>R$ {{ payingValue }}</h2>
+  <h2>{{ payingValue | currency:"BRL" }}</h2>
 </header>
 <main>
   <h2>Streamings ativos</h2>
@@ -16,9 +16,9 @@
           <p>{{ i.name }}</p>
           <p>{{i.sharedWith}} pessoas</p>
         </div>
-        <p class="price"> {{ i.price | currency:"BRL"}}</p>
+        <p class="price"> {{ i.price/i.sharedWith | currency:"BRL"}}</p>
       </div>
-      <div class="separador" ></div>
+      <div class="separador" *ngIf="(i != items[items.length-1])"></div>
     </form>
 </section>
 </main>

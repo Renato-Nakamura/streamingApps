@@ -6,25 +6,25 @@
 </header>
 <main>
   <img src="{{chosenStreaming.logo}}" alt="foto do streaming">
-  <form action="" #formS = "ngForm" (ngSubmit)="addStreaming()">
+  <form action="" #formS="ngForm" (ngSubmit)="addStreaming()">
     <div>
       <label for="name">Nome</label>
-      <input (keydown.enter)="selectedStreaming()" [(ngModel)]="chosenStreaming.name" type="text" placeholder="Nome do serviço" aria-label="Number" matInput [formControl]="myControl"
-        [matAutocomplete]="auto">
+      <input (keydown.enter)="selectedStreaming()"  [(ngModel)]="chosenStreaming.name" type="text"
+        placeholder="Nome do serviço" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="selectedStreaming()">
           {{option}}
         </mat-option>
       </mat-autocomplete>
     </div>
     <div>
-      <label for="price"  >Preço</label>
+      <label for="price">Preço</label>
       <input type="number" name="price" id="" [(ngModel)]="chosenStreaming.price">
     </div>
     <div>
       <label for="shared">Dividido entre</label>
       <input type="number" name="shared" id="" [(ngModel)]="chosenStreaming.sharedWith">
     </div>
-    <input type="submit" value="Salvar" >
+    <input type="submit" value="Salvar">
   </form>
 </main>
