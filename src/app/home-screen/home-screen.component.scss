@@ -91,5 +91,8 @@ main{
         border: none;
         font-size: 2em;
         color: white;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
