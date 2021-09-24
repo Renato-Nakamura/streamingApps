@@ -1,98 +1,154 @@
-.separador{
-    height: 1px;
-    background-color: white;
-    width: 95%;
-    
+.separador {
+  height: 1px;
+  background-color: white;
+  width: 95%;
 }
 
-header{
-    background-color: lightgray;
-    padding: 1rem;
-    div{
-        display: flex;
-        justify-content:space-between;
-        margin: 2em 0;
-        img{
-            border-radius: 50%;
-            width: 50px;
-        }
+header {
+  background-color: lightgray;
+  div {
+    display: flex;
+    justify-content: space-between;
+    img {
+      border-radius: 50%;
     }
-    p{
-        font-size: 0.8em;
-    }
-    h2{
-        font-size: 2.5em;
-    }
-}
-main{
-    h2{
-        margin-top: 2em;
-        text-align: center;
-    }
-    section{
-        background-color: gray;
-        margin: 1em 1em;
-        border-radius: 8px;
-        form{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .items{
-                width: 100%;
-                display: flex;
-                height: 4em;
-                align-items: center;
-                justify-content: space-between;
-                img{
-                    height: 2em;
-                    width: 2em;
-                    border-radius: 50%;
-                    margin-left: 1em;
-                    flex: 1;
-                }
-                div{
-                    flex: 4;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: baseline;
-                    padding: 1em;
-                    p{
-                        margin: 0;
-                    }
-                }
-                .price{
-                    flex: 3;
-                    font-size: 1.7em;
-                    margin: 0;
-                }
-
-            }
-        }
-    }
+  }
 }
 
-.add{
-    position: fixed;
-    width: 100%;
-    bottom: 20px;
+
+.add {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    button{
-        height: 50px;
-        width: 50px;
+    border: none;
+    font-size: 2em;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 700px) {
+  header {
+    padding: 1rem;
+    div {
+      margin: 2em 0;
+      img {
         border-radius: 50%;
-        background-color: gray;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        font-size: 2em;
-        color: white;
-        &:hover{
-            cursor: pointer;
+        width: 50px;
+      }
+      > p {
+        display: none;
+      }
+    }
+    p {
+      font-size: 0.8em;
+    }
+    h2 {
+      font-size: 2.5em;
+    }
+  }
+
+  main {
+      .banner{
+          display: none;
+      }
+    .info{
+        h2 {
+          margin-top: 2em;
+          text-align: center;
+        }
+        >div{
+            display: none;
         }
     }
+    .list {
+      background-color: gray;
+      margin: 1em 1em;
+      border-radius: 8px;
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .items {
+          width: 100%;
+          display: flex;
+          height: 4em;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+            margin-left: 1em;
+            flex: 1;
+          }
+          div {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            padding: 1em;
+            p {
+              margin: 0;
+            }
+          }
+          .price {
+            flex: 3;
+            font-size: 1.7em;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  header {
+    padding: 0.5em;
+    div {
+      margin: 0;
+    }
+    .user-profile {
+      display: flex;
+      align-items: center;
+      img {
+        height: 30px;
+        width: 30px;
+      }
+      p {
+        margin: 0 10px 0 0;
+        display: block;
+      }
+    }
+    > p,
+    > h2 {
+      display: none;
+    }
+  }
+
+  main{
+      .banner{
+          background-color: green;
+          width: 80%;
+          height: 200px;
+      }
+      img{
+          width: 50px;
+      }
+  }
 }

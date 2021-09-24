@@ -1,17 +1,29 @@
 <header>
   <div>
     <img src="" alt="logo" />
-    <img src="{{user.photo}}" alt="user" />
+    <div class="user-profile">
+      <p>{{user.name}}</p>
+      <img src="{{user.photo}}" alt="user" />
+    </div>
   </div>
   <p>Valor total:</p>
   <h2>{{ payingValue | currency:"BRL" }}</h2>
 </header>
 <main>
-  <h2>Streamings ativos</h2>
-  <section>
+  <section class="banner">
+
+  </section>
+  <section class="info">
+    <h2>Streamings ativos</h2>
+    <div>
+      <p>Valor total:</p>
+      <h2>{{ payingValue | currency:"BRL" }}</h2>
+    </div>
+  </section>
+  <section class="list">
     <form *ngFor="let i of items ">
       <div class="items">
-        <img src="{{ i.logo }}" alt="logo"/>
+        <img src="{{ i.logo }}" alt="logo" />
         <div>
           <p>{{ i.name }}</p>
           <p>{{i.sharedWith}} pessoas</p>
@@ -20,7 +32,7 @@
       </div>
       <div class="separador" *ngIf="(i != items[items.length-1])"></div>
     </form>
-</section>
+  </section>
 </main>
 <button (click)="app()">aaaaaaaaaaa</button>
 <div class="add" id="addStreaming"><button routerLink="/addStreaming">+</button></div>
