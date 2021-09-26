@@ -9,7 +9,7 @@
   <p>Valor total:</p>
   <h2>{{ payingValue | currency:"BRL" }}</h2>
 </header>
-<main>
+<main class="container">
   <section class="banner">
 
   </section>
@@ -28,11 +28,11 @@
           <p>{{ i.name }}</p>
           <p>{{i.sharedWith}} pessoas</p>
         </div>
-        <p class="price"> {{ i.price/i.sharedWith | currency:"BRL"}}</p>
+        <h2 class="price"> {{ i.price/i.sharedWith | currency:"BRL"}}</h2>
       </div>
       <div class="separador" *ngIf="(i != items[items.length-1])"></div>
     </form>
+    <div class="add" id="addStreaming"><button routerLink="/addStreaming">+</button></div>
   </section>
 </main>
 <button (click)="app()">aaaaaaaaaaa</button>
-<div class="add" id="addStreaming"><button routerLink="/addStreaming">+</button></div>
