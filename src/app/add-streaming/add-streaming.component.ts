@@ -32,10 +32,10 @@ export class AddStreamingComponent implements OnInit {
 
     }
   myControl = new FormControl();
-  chosenStreaming = {
+  chosenStreaming:StreamingModel = {
     logo: "https://imgur.com/sZJWdbK.png",
     name:"",
-    price: 0,
+    price: 0.00,
     sharedWith: 1
   }
 

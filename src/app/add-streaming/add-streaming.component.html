@@ -7,24 +7,24 @@
 <main>
   <img src="{{chosenStreaming.logo}}" alt="foto do streaming">
   <form action="" #formS="ngForm" (ngSubmit)="addStreaming()">
-    <div>
-      <label for="name">Nome</label>
-      <input (keydown.enter)="selectedStreaming()"  [(ngModel)]="chosenStreaming.name" type="text"
+    <mat-form-field>
+      <mat-label for="name">Nome</mat-label>
+      <input matInput (keydown.enter)="selectedStreaming()"  [(ngModel)]="chosenStreaming.name" type="text"
         placeholder="Nome do serviço" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="selectedStreaming()">
           {{option}}
         </mat-option>
       </mat-autocomplete>
-    </div>
-    <div>
-      <label for="price">Preço</label>
-      <input type="number" name="price" id="" [(ngModel)]="chosenStreaming.price">
-    </div>
-    <div>
-      <label for="shared">Dividido entre</label>
-      <input type="number" name="shared" id="" [(ngModel)]="chosenStreaming.sharedWith">
-    </div>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="price">Preço</mat-label>
+      <input matInput type="number" name="price" id="" [(ngModel)]="chosenStreaming.price">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="shared">Dividido entre</mat-label>
+      <input matInput type="number" name="shared" id="" [(ngModel)]="chosenStreaming.sharedWith">
+    </mat-form-field>
     <input type="submit" value="Salvar">
   </form>
 </main>

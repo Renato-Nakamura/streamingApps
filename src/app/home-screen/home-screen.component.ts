@@ -58,11 +58,7 @@ export class HomeScreenComponent implements OnInit {
       this.payingValue = this.payingValue + i.price;
     }
   }
-  app() {
-    
-    for (let i of this.items) {
-      this.payingValue = this.payingValue + i.price;
-      console.log(i.price);
-    }
-  }
+//  app() {
+
+  //}
 }

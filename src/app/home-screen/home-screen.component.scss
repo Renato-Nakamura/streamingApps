@@ -86,9 +86,30 @@ header {
             margin: 0;
           }
         }
-        
       }
-      button {
+    }
+    .addCenter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: initial;
+      position: fixed;
+      width: 100%;
+      bottom: 20px;
+      right: 0;
+      left: 0;
+    }
+
+    .add {
+      &:hover {
+        cursor: pointer;
+      }
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: none;
+
+      > div {
         height: 50px;
         width: 50px;
         border-radius: 50%;
@@ -97,22 +118,8 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: none;
         font-size: 2em;
         color: white;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      .add {
-          position: initial;
-        position: fixed;
-        width: 100%;
-        bottom: 20px;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
   }
@@ -197,29 +204,27 @@ header {
           display: none;
         }
       }
-      .add{
+      .add {
         background-color: lightgrey;
-
+        height: 172px;
+        width: 133.33px;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        button{
-            height: 50px;
-            width: 50px;
-            background-color: lightgrey;
-
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            font-size: 2em;
-            color: white;
-            &:hover {
-              cursor: pointer;
-            }
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+        > div {
+          background-color: lightgrey;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2em;
+          color: white;
         }
       }
     }
