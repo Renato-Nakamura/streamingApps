@@ -1,9 +1,16 @@
 <header>
   <div>
     <img src="" alt="logo" />
-    <div class="user-profile">
-      <p>{{user.name}}</p>
-      <img src="{{user.photo}}" alt="user" />
+    <div >
+      <button class="user-profile" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <p>{{user.name}}</p>
+        <img src="{{user.photo}}" alt="user" />
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)='sair()'>
+          <span>Sair</span>
+        </button>
+      </mat-menu>
     </div>
   </div>
   <p>Valor total:</p>

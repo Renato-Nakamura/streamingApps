@@ -5,6 +5,7 @@ import {
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 export interface Item {
   logo: string;
   name: string;
@@ -28,29 +29,33 @@ export class HomeScreenComponent implements OnInit {
   private itemsCollection: AngularFirestoreCollection<Item>;
   constructor(
     private afs: AngularFirestore,
-    private router: Router
-  ) {
-    
-  }
+    private router: Router,
+    private auth: AuthService
+  ) {}
 
-   async ngOnInit() {
+  async ngOnInit() {
     //if(!environment.user.id){
-      //this.router.navigate(['/'])
+    //this.router.navigate(['/'])
     //}
     //let user = await this.authService.loggedIn()
-    let userJSON = localStorage.getItem('user')
-    if(userJSON){
-      this.user = JSON.parse(userJSON)
+    let a =this.auth.loggedIn()
+    console.log('aaa',a)
+    let userJSON = localStorage.getItem('user');
+    if (userJSON) {
+      this.user = JSON.parse(userJSON);
       this.itemsCollection = this.afs.collection<Item>(this.user.id);
-      this.itemsCollection.valueChanges().subscribe(i =>{
-        this.items = i
-        this.payingValue =i.map(a=>(a.price/a.sharedWith)).reduce((previousValue,currentValue)=>previousValue+currentValue)
+      this.itemsCollection.valueChanges().subscribe((i) => {
+        this.items = i;
+        this.payingValue = i
+          .map((a) => a.price / a.sharedWith)
+          .reduce(
+            (previousValue, currentValue) => previousValue + currentValue
+          );
       });
-    }else{
-      this.router.navigate(['/login'])
+    } else {
+      this.router.navigate(['/login']);
     }
     //this.app()
-    
   }
 
   totalPrice() {
@@ -58,7 +63,11 @@ export class HomeScreenComponent implements OnInit {
       this.payingValue = this.payingValue + i.price;
     }
   }
-//  app() {
+
+  sair() {
+    this.auth.userLogout();
+  }
+  //  app() {
 
   //}
 }

@@ -13,12 +13,16 @@ header {
       border-radius: 50%;
     }
   }
+  .user-profile{
+    border: none;
+    background-color: lightgrey;
+  }
 }
 
 @media (max-width: 600px) {
   header {
     padding: 1rem;
-    div {
+    .user-profile {
       margin: 1em 0;
       img {
         border-radius: 50%;

@@ -73,7 +73,7 @@ export class AddStreamingComponent implements OnInit {
   }
   addStreaming(){
     console.log("show")
-    this.db.addStreaming(this.chosenStreaming,environment.user.id)
+    this.db.addStreaming(this.chosenStreaming,this.auth.userLogged.id)
     this.router.navigate(['/home'])
   }
 
